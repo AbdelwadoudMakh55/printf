@@ -6,5 +6,5 @@
  */
 int print_s(char *string)
 {
-	return(_puts(string));
+	return (_puts(string));
 }
