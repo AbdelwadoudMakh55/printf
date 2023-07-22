@@ -25,7 +25,10 @@ int _printf(const char *format, ...)
 						i += 2;
 						break;
 					case 's':
-						len += _puts(va_arg(list, char *));
+						if (va_arg(list, char *))
+							_puts("(null)");
+						else
+							len += _puts(va_arg(list, char *));
 						i += 2;
 						break;
 					case '%':
