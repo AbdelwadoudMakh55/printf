@@ -35,6 +35,12 @@ int _printf(const char *format, ...)
 					continue;
 			}
 		}
+		else
+		{
+			len += _putchar(format[i]);
+			i++;
+		{
+
 	}
 	return (len);
 }
