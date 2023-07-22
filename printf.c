@@ -10,7 +10,6 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	int i = 0, len = 0;
-	char *string;
 
 	va_start(list, format);
 	while (format[i] != '\0' && i <= _strlen(format) - 1)
@@ -24,11 +23,7 @@ int _printf(const char *format, ...)
 					i += 2;
 					break;
 				case 's':
-					string = va_arg(list, char *);
-					if (string == NULL)
-						_puts("(null)");
-					else
-						len += _puts(string);
+					len += _puts(va_arg(list, char *));
 					i += 2;
 					break;
 				case '%':
