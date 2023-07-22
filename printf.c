@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 						i += 2;
 						break;
 					case 's':
-						if (va_arg(list, char *))
+						if (va_arg(list, char *) == NULL)
 							_puts("(null)");
 						else
 							len += _puts(va_arg(list, char *));
