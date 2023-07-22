@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	int i = 0, len = 0;
+	char *string;
 
 	va_start(list, format);
 	if (format != NULL)
@@ -25,10 +26,11 @@ int _printf(const char *format, ...)
 						i += 2;
 						break;
 					case 's':
-						if (va_arg(list, char *) == NULL)
+						string = va_arg(list, char *);
+						if (string == NULL)
 							_puts("(null)");
 						else
-							len += _puts(va_arg(list, char *));
+							len += _puts(string);
 						i += 2;
 						break;
 					case '%':
