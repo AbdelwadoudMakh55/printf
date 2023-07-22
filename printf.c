@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 						i++;
 						continue;
 				}
-			}	
+			}
 			else
 			{
 				len += _putchar(format[i]);
