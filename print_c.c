@@ -6,5 +6,5 @@
  */
 int print_c(char c)
 {
-	return(_putchar(c));
+	return (_putchar(c));
 }
