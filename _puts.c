@@ -4,7 +4,7 @@
  * @str : pointer to string.
  * Return: Length of string..
  */
-int _puts(char *str)
+int _puts(const char *str)
 {
 	int i;
 	int len  = 0;
