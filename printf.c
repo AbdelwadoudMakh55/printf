@@ -12,14 +12,14 @@ int _printf(const char *format, ...)
 	int i = 0, len = 0;
 
 	va_start(list, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0')
-	|| (format == NULL && format[0] == '\0'))
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			switch (format[i + 1])
+			i++;
+			switch (format[i])
 			{
 				case 'c':
 					len += _putchar(va_arg(list, int));
@@ -28,13 +28,14 @@ int _printf(const char *format, ...)
 					len += _puts(va_arg(list, char *));
 					break;
 				case '%':
-					len += _putchar(format[i + 1]);
+					len += _putchar('%');
 					break;
 				default:
+					len += _putchar(format[i]);
 					i++;
 					continue;
 			}
-			i += 2;
+			i++;
 		}
 		else
 		{
