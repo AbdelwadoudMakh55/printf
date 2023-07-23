@@ -22,25 +22,22 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 					len += _putchar(va_arg(list, int));
-					i += 2;
 					break;
 				case 's':
 					len += _puts(va_arg(list, char *));
-					i += 2;
 					break;
 				case '%':
 					len += _putchar(format[i + 1]);
-					i += 2;
 					break;
 				case 'd':
 				case 'i':
 					len += print_number(va_arg(list, int));
-					i += 2;
 					break;
 				default:
-					i += 2;
+					i++;
 					continue;
 			}
+			i += 2;
 		}
 		else
 		{
