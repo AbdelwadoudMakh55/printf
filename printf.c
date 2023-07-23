@@ -34,6 +34,9 @@ int _printf(const char *format, ...)
 				case 'i':
 					len += print_number(va_arg(list, int));
 					break;
+				case 'b':
+					len += print_binary(va_arg(list, int));
+					break;
 				default:
 					len += _putchar('%');
 					if (format[i] != '\0')
