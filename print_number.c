@@ -6,15 +6,21 @@
  */
 int print_number(int n)
 {
-	int len = 0;
+	int copy_n = n, count = 0;
 
 	if (n < 0)
 	{
 		_putchar(45);
 		n = -n;
+		copy_n = -n;
+	}
+	while (copy_n != 0)
+	{
+		copy_n = copy_n / 10;
+		count++;
 	}
 	if (n / 10 != 0)
 		print_number(n / 10);
 	_putchar(n % 10 + 48);
-	return (len);
+	return (count);
 }
