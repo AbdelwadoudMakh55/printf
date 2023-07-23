@@ -9,7 +9,8 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int i = 0, len = 0, num = 0;
+	int i = 0, len = 0, num;
+	unsigned int p_num;
 
 	va_start(list, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
@@ -37,7 +38,10 @@ int _printf(const char *format, ...)
 				case 'b':
 					num = va_arg(list, int);
 					if (num > 0)
-						len += print_binary(num);
+					{
+						p_num = num;
+						len += print_binary(p_num);
+					}
 					break;
 				default:
 					len += _putchar('%');
