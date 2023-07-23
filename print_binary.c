@@ -8,7 +8,7 @@
 int print_binary(int n)
 {
 	int len = 0, i = 0;
-	char buffer[100];
+	char buffer[200];
 
 	for (i = 0; n / 2 != 0; i++)
 	{
