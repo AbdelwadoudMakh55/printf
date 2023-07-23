@@ -13,6 +13,7 @@ int print_number(int n)
 		_putchar(45);
 		n = -n;
 		copy_n = -n;
+		count++;
 	}
 	while (copy_n != 0)
 	{
