@@ -30,6 +30,10 @@ int _printf(const char *format, ...)
 				case '%':
 					len += _putchar('%');
 					break;
+				case 'd':
+				case 'i':
+					len += print_number(va_arg(list, int));
+					break;
 				default:
 					len += _putchar('%');
 					if (format[i] != '\0')
