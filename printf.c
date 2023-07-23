@@ -30,8 +30,13 @@ int _printf(const char *format, ...)
 					len += _putchar(format[i + 1]);
 					i += 2;
 					break;
+				case 'd':
+				case 'i':
+					len += print_number(va_arg(list, int));
+					i += 2;
+					break;
 				default:
-					i++;
+					i += 2;
 					continue;
 			}
 		}
