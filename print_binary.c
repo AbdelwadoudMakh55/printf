@@ -5,7 +5,7 @@
  * @n : Number.
  * Return: Number of 0 and 1.
  */
-int print_binary(int n)
+int print_binary(unsigned int n)
 {
 	int len = 0, i = 0;
 	char buffer[200];
