@@ -31,7 +31,6 @@ int _printf(const char *format, ...)
 					len += _putchar('%');
 					break;
 				default:
-					len += _putchar('%');
 					if (format[i] != '\0')
 						len += _putchar(format[i]);
 					i++;
