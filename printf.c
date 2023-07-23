@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	int i = 0, len = 0, num;
+	char *string;
 
 	va_start(list, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
@@ -22,17 +23,20 @@ int _printf(const char *format, ...)
 			switch (format[i])
 			{
 				case 'c':
-					len += _putchar(va_arg(list, int));
+					num = va_arg(list, int);
+					len += _putchar(num);
 					break;
 				case 's':
-					len += _puts(va_arg(list, char *));
+					string = va_arg(list, char *);
+					len += _puts(string);
 					break;
 				case '%':
 					len += _putchar('%');
 					break;
 				case 'd':
 				case 'i':
-					len += print_number(va_arg(list, int));
+					num = va_arg(list, int); 
+					len += print_number(num);
 					break;
 				case 'b':
 					num = va_arg(list, int);
