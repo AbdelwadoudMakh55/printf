@@ -5,8 +5,9 @@
  * @s : Pointer to string.
  * Return: Pointer to string.
  */
-char *rot13(char *s)
+int rot13(char *s)
 {
+	int len = 0;
 	int i;
 	int j;
 	char letrs[52] = {'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E',
@@ -18,7 +19,9 @@ char *rot13(char *s)
 	'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h',
 	'H', 'i', 'I', 'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M'};
 
-	if (s != NULL)
+	if (s == NULL)
+		len += _puts("(null)");
+	else
 	{
 		for (i = 0; *(s + i) != '\0'; i++)
 		{
@@ -26,11 +29,11 @@ char *rot13(char *s)
 			{
 				if (*(s + i) == letrs[j])
 				{
-					*(s + i) = rot13[j];
+					len += _putchar(rot13[j]);
 					break;
 				}
 			}
 		}
 	}
-	return (s);
+	return (len);
 }
