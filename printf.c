@@ -49,9 +49,7 @@ int _printf(const char *format, ...)
 					break;
 				case 'R':
 					string = va_arg(list, char *);
-					if (string == NULL)
-						len += _puts("(null)");
-					else
+					if (string != NULL)
 					{	
 						ptr = malloc((_strlen(string) + 1) * sizeof(char));
 						for (j = 0; string[j] != '\0'; j++)
