@@ -33,10 +33,7 @@ int rot13(char *s)
 					break;
 				}
 				else
-				{
 					len += _putchar(*(s + i));
-					break;
-				}
 			}
 		}
 	}
