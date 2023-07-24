@@ -7,10 +7,11 @@
  */
 int _print_rev_recursion(char *s)
 {
-	int len = 0;
+	int len;
 
 	if (s == NULL)
-		_puts("(null");
+		_puts("(null)");
+	len = _strlen(s);
 	if (*s != '\0')
 	{
 		s++;
