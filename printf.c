@@ -10,9 +10,8 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int i,j = 0, len = 0, num;
-	char *string;
-        char *ptr;
+	int i = 0, j, len = 0, num;
+	char *string, *ptr;
 
 	va_start(list, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
