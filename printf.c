@@ -1,6 +1,6 @@
-#include "stdarg.h"
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * _printf - Print strings and chars.
  * @format : Format specifier.
@@ -9,8 +9,9 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int i = 0, len = 0, num;
+	int i,j = 0, len = 0, num;
 	char *string;
+        char *ptr;
 
 	va_start(list, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
