@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * print_number - Print integer to stdout.
  * @n : Number.
@@ -8,6 +9,13 @@ int print_number(int n)
 {
 	int copy_n = n, count = 0;
 
+	if (n == -2147483648)
+	{
+		_putchar('-');
+		_putchar('2');
+		print_number(147483648);
+		exit(0);
+	}
 	if (n < 0)
 	{
 		_putchar(45);
