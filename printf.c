@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	int i = 0, j, len = 0, num;
-	char *string, *ptr;
+	char *string, *ptr, *r;
 
 	va_start(list, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
@@ -50,15 +50,15 @@ int _printf(const char *format, ...)
 				case 'R':
 					string = va_arg(list, char *);
 					if (string == NULL)
-						len += _puts("(ahyy)");
+						len += _puts("(null)");
 					else
 					{	
 						ptr = malloc((_strlen(string) + 1) * sizeof(char));
 						for (j = 0; string[j] != '\0'; j++)
 							ptr[j] = string[j];
 						ptr[j] = '\0';
-						ptr = rot13(ptr);
-						len += _puts(ptr);
+						r = rot13(ptr);
+						len += _puts(r);
 						free(ptr);
 					}
 					break;
