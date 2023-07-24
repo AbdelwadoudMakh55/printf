@@ -4,12 +4,18 @@
  * @s : Pointer to string.
  * Return: void (string in reverse).
  */
-void _print_rev_recursion(char *s)
+int _print_rev_recursion(char *s)
 {
+	int len = 0;
+
+	if (s == NULL)
+		_puts("(null");
 	if (*s != '\0')
 	{
 		s++;
 		_print_rev_recursion(s);
 		_putchar(*(s - 1));
+		len++;
 	}
+	return (len);
 }

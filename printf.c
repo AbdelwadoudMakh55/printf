@@ -42,6 +42,10 @@ int _printf(const char *format, ...)
 					num = va_arg(list, int);
 					len += print_binary(num);
 					break;
+				case 'r':
+					string = va_arg(list, char *);
+					len += _print_rev_recursion(string);
+					break;
 				default:
 					len += _putchar('%');
 					if (format[i] != '\0')
