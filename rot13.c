@@ -23,18 +23,18 @@ int rot13(char *s)
 		len += _puts("(null)");
 	else
 	{
-		for (i = 0; *(s + i) != '\0'; i++)
+		for (i = 0; s[i] != '\0'; i++)
 		{
 			for (j = 0; j < 52; j++)
 			{
-				if (*(s + i) == letrs[j])
+				if (s[i] == letrs[j])
 				{
 					len += _putchar(rot13[j]);
 					break;
 				}
-				else
-					len += _putchar(*(s + i));
 			}
+			if (j == 52)
+				len += _putchar(s[i]);
 		}
 	}
 	return (len);
