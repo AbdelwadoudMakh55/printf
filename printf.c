@@ -50,7 +50,7 @@ int _printf(const char *format, ...)
 				case 'R':
 					string = va_arg(list, char *);
 					if (string == NULL)
-						len += _puts("(null)");
+						len += _puts("(ahyy)");
 					else
 					{	
 						ptr = malloc((_strlen(string) + 1) * sizeof(char));
