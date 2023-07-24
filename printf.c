@@ -46,6 +46,15 @@ int _printf(const char *format, ...)
 					string = va_arg(list, char *);
 					len += _print_rev_recursion(string);
 					break;
+				case 'R':
+					string = va_arg(list, char *);
+					ptr = malloc((_strlen(string) + 1) * sizeof(char));
+					for (j = 0; string[j] != '\0'; j++)
+						ptr[j] = string[j];
+					ptr[j] = '\0';
+					ptr = rot13(ptr);
+					len += _puts(ptr);
+					break;
 				default:
 					len += _putchar('%');
 					if (format[i] != '\0')
