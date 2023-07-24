@@ -18,19 +18,17 @@ char *rot13(char *s)
 	'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h',
 	'H', 'i', 'I', 'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M'};
 
-	if (s == NULL)
+	if (s != NULL)
 	{
-		_puts("(null)");
-		return (0);
-	}
-	for (i = 0; *(s + i) != '\0'; i++)
-	{
-		for (j = 0; j < 52; j++)
+		for (i = 0; *(s + i) != '\0'; i++)
 		{
-			if (*(s + i) == letrs[j])
+			for (j = 0; j < 52; j++)
 			{
-				*(s + i) = rot13[j];
-				break;
+				if (*(s + i) == letrs[j])
+				{
+					*(s + i) = rot13[j];
+					break;
+				}
 			}
 		}
 	}

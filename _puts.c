@@ -11,7 +11,10 @@ int _puts(char *str)
 	int len  = 0;
 
 	if (str == NULL)
+	{
 		_puts("(null)");
+		return (6);
+	}
 	else
 	{
 		for (i = 0; *(str + i) != '\0'; i++)
