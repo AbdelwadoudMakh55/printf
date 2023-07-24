@@ -49,16 +49,13 @@ int _printf(const char *format, ...)
 					break;
 				case 'R':
 					string = va_arg(list, char *);
-					if (string != NULL)
-					{	
-						ptr = malloc((_strlen(string) + 1) * sizeof(char));
-						for (j = 0; string[j] != '\0'; j++)
-							ptr[j] = string[j];
-						ptr[j] = '\0';
-						r = rot13(ptr);
-						len += _puts(r);
-						free(ptr);
-					}
+					ptr = malloc((_strlen(string) + 1) * sizeof(char));
+					for (j = 0; string[j] != '\0'; j++)
+						ptr[j] = string[j];
+					ptr[j] = '\0';
+					r = rot13(ptr);
+					len += _puts(r);
+					free(ptr);
 					break;
 				default:
 					len += _putchar('%');
