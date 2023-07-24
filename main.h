@@ -7,6 +7,7 @@ int _strlen(const char *s);
 int print_number(int n);
 int _print_rev_recursion(char *s);
 int print_binary(unsigned int n);
+char *rot13(char *s);
 int _printf(const char *format, ...);
 
 #endif
