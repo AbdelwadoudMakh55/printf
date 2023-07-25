@@ -52,19 +52,15 @@ int _printf(const char *format, ...)
 					len += rot13(string);
 					break;
 				default:
-					len += _putchar('%');
 					if (format[i] != '\0')
 						len += _putchar(format[i]);
 					i++;
 					continue;
 			}
-			i++;
 		}
-		else
-		{
+		else if (format[i] != '%')
 			len += _putchar(format[i]);
-			i++;
-		}
+		i++;
 	}
 	va_end(list);
 	return (len);
