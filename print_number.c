@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdarg.h>
 /**
  * print_number - Print integer to stdout.
  * @n : Number.

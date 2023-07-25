@@ -1,25 +1,26 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdarg.h>
 /**
  * _puts - prints a string to stdout and return its length.
- * @str : pointer to string.
+ * @s : String.
  * Return: Length of string..
  */
-int _puts(char *str)
+int _puts(char *s)
 {
 	int i;
 	int len  = 0;
 
-	if (str == NULL)
+	if (s == NULL)
 	{
 		_puts("(null)");
 		return (6);
 	}
 	else
 	{
-		for (i = 0; *(str + i) != '\0'; i++)
+		for (i = 0; *(s + i) != '\0'; i++)
 		{
-			_putchar(*(str + i));
+			_putchar(*(s + i));
 			len++;
 		}
 	}

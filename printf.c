@@ -10,8 +10,8 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int i = 0, len = 0, num;
-	char *string;
+	int i = 0, len = 0;
+	int (*function)(va_list);
 
 	va_start(list, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
@@ -21,7 +21,16 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && i < _strlen(format) - 1)
 		{
 			i++;
-			switch (format[i])
+			function = get_fun(format[i]);
+			if (function != NULL)
+				len += function(list);
+			else
+			{
+				len += _putchar('%');
+				if (format[i] != '\0')
+					len += _putchar(format[i]);
+			}
+			/*switch (format[i])
 			{
 				case 'c':
 					num = va_arg(list, int);
@@ -57,7 +66,7 @@ int _printf(const char *format, ...)
 						len += _putchar(format[i]);
 					i++;
 					continue;
-			}
+			}*/
 		}
 		else if (format[i] != '%')
 			len += _putchar(format[i]);

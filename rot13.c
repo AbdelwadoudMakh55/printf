@@ -1,11 +1,12 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdarg.h>
 /**
  * rot13 - Encodes a string using rot13.
- * @s : Pointer to string.
+ * @list : List of args.
  * Return: Pointer to string.
  */
-int rot13(char *s)
+int rot13(va_list list)
 {
 	int len = 0;
 	int i;
@@ -18,6 +19,7 @@ int rot13(char *s)
 	'S', 't', 'T', 'u', 'U', 'v', 'V', 'w', 'W', 'x', 'X', 'y', 'Y', 'z', 'Z',
 	'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h',
 	'H', 'i', 'I', 'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M'};
+	char *s = va_arg(list, char *);
 
 	if (s == NULL)
 		len += _puts("(null)");

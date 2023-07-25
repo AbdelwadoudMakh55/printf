@@ -1,14 +1,16 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdarg.h>
 /**
  * print_binary - Print the corresponding binary value of an int.
- * @n : Number.
+ * @list : list of args.
  * Return: Number of 0 and 1.
  */
-int print_binary(unsigned int n)
+int print_binary(va_list list)
 {
 	int len = 0, i = 0;
 	char buffer[200];
+	int n = va_arg(list, int);
 
 	for (i = 0; n / 2 != 0; i++)
 	{
