@@ -8,22 +8,16 @@
  */
 int print_binary(va_list list)
 {
-	int len = 0, i = 0;
+	int i = 0;
 	char buffer[200];
-	int n = va_arg(list, int);
+	unsigned int n = va_arg(list, int);
 
-	if (n >= 0)
+	for (i = 0; n / 2 != 0; i++)
 	{
-		for (i = 0; n / 2 != 0; i++)
-		{
-			buffer[i] = 48 + n % 2;
-			len++;
-			n /= 2;
-		}
 		buffer[i] = 48 + n % 2;
-		len++;
-		buffer[i + 1] = '\0';
-		_print_rev_recursion(buffer);
+		n /= 2;
 	}
-	return (len);
+	buffer[i] = 48 + n % 2;
+	buffer[i + 1] = '\0';
+	return (_print_rev_recursion(buffer));
 }
