@@ -12,7 +12,7 @@ int print_binary(va_list list)
 	char buffer[200];
 	int n = va_arg(list, int);
 
-	if (n > 0)
+	if (n >= 0)
 	{
 		for (i = 0; n / 2 != 0; i++)
 		{
