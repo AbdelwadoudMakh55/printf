@@ -5,12 +5,12 @@
 /**
  * get_fun - Get the right function for the specifier.
  * @specifier : Type specifier (Char).
- * Return : Pointer to function.
+ * Return: Pointer to function.
  */
 int (*get_fun(char specifier))(va_list)
 {
 	function_t func[] = {{'c', print_c},
-				{'s', print_s}, 
+				{'s', print_s},
 				{'d', print_n},
 				{'i', print_n},
 				{'b', print_binary},
