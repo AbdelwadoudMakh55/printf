@@ -12,15 +12,18 @@ int print_binary(va_list list)
 	char buffer[200];
 	int n = va_arg(list, int);
 
-	for (i = 0; n / 2 != 0; i++)
+	if (n > 0)
 	{
+		for (i = 0; n / 2 != 0; i++)
+		{
+			buffer[i] = 48 + n % 2;
+			len++;
+			n /= 2;
+		}
 		buffer[i] = 48 + n % 2;
 		len++;
-		n /= 2;
+		buffer[i + 1] = '\0';
+		_print_rev_recursion(buffer);
 	}
-	buffer[i] = 48 + n % 2;
-	len++;
-	buffer[i + 1] = '\0';
-	_print_rev_recursion(buffer);
 	return (len);
 }
