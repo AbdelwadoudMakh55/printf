@@ -28,7 +28,6 @@ int print_r(va_list list);
 int print_binary(va_list list);
 int rot13(va_list list);
 int _printf(const char *format, ...);
-int lower_hex_int(buffer, va_list g);
 int (*get_fun(char specifier))(va_list);
 
 #endif

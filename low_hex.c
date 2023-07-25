@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+
 /**
  * lower_hex_int - Handles conversion specifier "x"
  * @buffer: Pointer to struct buffer
@@ -7,45 +8,48 @@
  *
  * Return: Pointer to struct buffer.
  */
-int lower_hex_int(buffer, va_list g)
+struct buffer lower_hex_int(struct buffer *buffer, va_list g)
 {
-	int n, i, j, len;
-	char rev_hex[100];
+    int n, i, len;
+    char rev_hex[100];
 
-	n = va_arg(g, int);
+    n = va_arg(g, int);
 
-	len = 0;
-	while (n)
-	{
-		i = 0;
+    if (n == 0)
+    {
+        // Handle the special case when n is 0
+        buffer->array[0] = '0';
+        buffer->array++;
+        buffer->size++;
+        return *buffer;
+    }
 
-		i = n % 16;
+    len = 0;
+    while (n)
+    {
+        i = n % 16;
 
-		if (i < 10)
-		{
-			rev_hex[len] = i + 48;
-			len++;
-		}
-		else
-		{
-			rev_hex[len] = i + 87;
-			len++;
-		}
+        if (i < 10)
+        {
+            rev_hex[len] = i + '0';
+            len++;
+        }
+        else
+        {
+            rev_hex[len] = i + 'a' - 10;
+            len++;
+        }
 
-		n /= 16;
-	}
+        n /= 16;
+    }
 
-	j = 0;
-	len--;
-	while (j <= len)
-	{
-		*buffer.array = rev_hex[len];
+    len--;
+    while (len >= 0)
+    {
+        buffer->array[buffer->size] = rev_hex[len];
+        buffer->size++;
+        len--;
+    }
 
-		buffer.array++;
-		buffer.size++;
-		len--;
-	}
-
-	buffer.array--;
-	return (buffer);
+    return *buffer;
 }
