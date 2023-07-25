@@ -30,43 +30,6 @@ int _printf(const char *format, ...)
 				if (format[i] != '\0')
 					len += _putchar(format[i]);
 			}
-			/*switch (format[i])
-			{
-				case 'c':
-					num = va_arg(list, int);
-					len += _putchar(num);
-					break;
-				case 's':
-					string = va_arg(list, char *);
-					len += _puts(string);
-					break;
-				case '%':
-					len += _putchar('%');
-					break;
-				case 'd':
-				case 'i':
-					num = va_arg(list, int);
-					len += print_number(num);
-					break;
-				case 'b':
-					num = va_arg(list, int);
-					len += print_binary(num);
-					break;
-				case 'r':
-					string = va_arg(list, char *);
-					len += _print_rev_recursion(string);
-					break;
-				case 'R':
-					string = va_arg(list, char *);
-					len += rot13(string);
-					break;
-				default:
-					len += _putchar('%');
-					if (format[i] != '\0')
-						len += _putchar(format[i]);
-					i++;
-					continue;
-			}*/
 		}
 		else if (format[i] != '%')
 			len += _putchar(format[i]);
