@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 					break;
 				case 'd':
 				case 'i':
-					num = va_arg(list, int); 
+					num = va_arg(list, int);
 					len += print_number(num);
 					break;
 				case 'b':
