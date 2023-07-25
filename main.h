@@ -28,6 +28,5 @@ int print_r(va_list list);
 int print_binary(va_list list);
 int rot13(va_list list);
 int _printf(const char *format, ...);
-int (*get_fun(char specifier))(va_list);
-
+int _write(char c)
 #endif
