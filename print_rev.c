@@ -1,8 +1,9 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdarg.h>
 /**
  * _print_rev_recursion - prints a string in reverse.
- * @s : Pointer to string.
+ * @s : string.
  * Return: void (string in reverse).
  */
 int _print_rev_recursion(char *s)

@@ -1,12 +1,14 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdarg.h>
 /**
  * rot13 - Encodes a string using rot13.
- * @s : Pointer to string.
+ * @list : List of args.
  * Return: Pointer to string.
  */
-char *rot13(char *s)
+int rot13(va_list list)
 {
+	int len = 0;
 	int i;
 	int j;
 	char letrs[52] = {'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E',
@@ -17,22 +19,25 @@ char *rot13(char *s)
 	'S', 't', 'T', 'u', 'U', 'v', 'V', 'w', 'W', 'x', 'X', 'y', 'Y', 'z', 'Z',
 	'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h',
 	'H', 'i', 'I', 'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M'};
+	char *s = va_arg(list, char *);
 
 	if (s == NULL)
+		len += _puts("(null)");
+	else
 	{
-		_puts("(null)");
-		return (0);
-	}
-	for (i = 0; *(s + i) != '\0'; i++)
-	{
-		for (j = 0; j < 52; j++)
+		for (i = 0; s[i] != '\0'; i++)
 		{
-			if (*(s + i) == letrs[j])
+			for (j = 0; j < 52; j++)
 			{
-				*(s + i) = rot13[j];
-				break;
+				if (s[i] == letrs[j])
+				{
+					len += _putchar(rot13[j]);
+					break;
+				}
 			}
+			if (j == 52)
+				len += _putchar(s[i]);
 		}
 	}
-	return (s);
+	return (len);
 }

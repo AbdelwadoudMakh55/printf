@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdarg.h>
 /**
  * print_number - Print integer to stdout.
  * @n : Number.
@@ -14,13 +15,12 @@ int print_number(int n)
 		_putchar('-');
 		_putchar('2');
 		print_number(147483648);
-		exit(0);
+		return (11);
 	}
 	if (n < 0)
 	{
 		_putchar(45);
 		n = -n;
-		copy_n = -n;
 		count++;
 	}
 	while (copy_n != 0)
