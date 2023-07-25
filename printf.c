@@ -52,6 +52,7 @@ int _printf(const char *format, ...)
 					len += rot13(string);
 					break;
 				default:
+					len += _putchar('%');
 					if (format[i] != '\0')
 						len += _putchar(format[i]);
 					i++;
