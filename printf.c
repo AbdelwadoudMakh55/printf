@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] != '\0')
-			{	
+			{
 				function = get_fun(format[i]);
 				if (function != NULL)
 					len += function(list);
