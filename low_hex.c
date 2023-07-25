@@ -1,72 +1,51 @@
 #include "main.h"
 #include <stdio.h>
-#include <stdarg.h>
-#include <stdlib.h>
-
 /**
- * low_hex_fmt - Handles conversion specifier "x"
- * @output: Pointer to a character buffer to store the result
- * @args: the integer to be converted to lowercase hex
+ * lower_hex_int - Handles conversion specifier "x"
+ * @buffer: Pointer to struct buffer
+ * @g: the integer to be converted to lowercase hex
  *
- * Return: Pointer to the end of the result in the character buffer.
+ * Return: Pointer to struct buffer.
  */
-char *low_hex_fmt(char *output, va_list args)
+int lower_hex_int(buffer, va_list g)
 {
-    int num, temp, i, len;
-    char rev_hex[100];
+	int n, i, j, len;
+	char rev_hex[100];
 
-    num = va_arg(args, int);
+	n = va_arg(g, int);
 
-    len = 0;
-    while (num)
-    {
-        temp = num % 16;
+	len = 0;
+	while (n)
+	{
+		i = 0;
 
-        if (temp < 10)
-        {
-            rev_hex[len] = temp + 48;
-            len++;
-        }
-        else
-        {
-            rev_hex[len] = temp + 87;
-            len++;
-        }
+		i = n % 16;
 
-        num /= 16;
-    }
+		if (i < 10)
+		{
+			rev_hex[len] = i + 48;
+			len++;
+		}
+		else
+		{
+			rev_hex[len] = i + 87;
+			len++;
+		}
 
-    if (len == 0)
-    {
-        rev_hex[len] = '0';
-        len++;
-    }
+		n /= 16;
+	}
 
-    i = 0;
-    len--;
-    while (i <= len)
-    {
-        *output = rev_hex[len];
-        output++;
-        len--;
-    }
+	j = 0;
+	len--;
+	while (j <= len)
+	{
+		*buffer.array = rev_hex[len];
 
-    return output;
-}
+		buffer.array++;
+		buffer.size++;
+		len--;
+	}
 
-int main()
-{
-    char result[100];
-    int value = 305;
-
-    char *end = low_hex_fmt(result, value);
-    *end = '\0'; // Null-terminate the result string
-
-    // Output the result to the console
-    for (char *c = result; *c != '\0'; c++)
-    {
-        putchar(*c);
-    }
-
-    return 0;
+	buffer.array--;
+	return (buffer);
 }
