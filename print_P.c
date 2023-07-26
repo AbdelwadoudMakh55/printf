@@ -9,5 +9,7 @@ int print_P(va_list list)
 {
 	void *ptr = va_arg(list, void *);
 
+	if (ptr == NULL)
+		return (_putchar('0'));
 	return (_printf("%x", ptr));
 }
