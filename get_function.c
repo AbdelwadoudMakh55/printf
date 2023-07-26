@@ -23,7 +23,7 @@ int (*get_fun(char specifier))(va_list)
 	int i;
 
 	i = 0;
-	while (i < 10)
+	while (i < 11)
 	{
 		if (specifier == func[i].c)
 			return (func[i].f);
