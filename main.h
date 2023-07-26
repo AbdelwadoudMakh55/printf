@@ -33,6 +33,7 @@ int print_octal(va_list list);
 int print_low_hex(va_list list);
 int print_up_hex(va_list list);
 int print_S(va_list list);
+int print_P(va_list list);
 int _printf(const char *format, ...);
 int (*get_fun(char specifier))(va_list);
 

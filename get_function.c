@@ -20,11 +20,12 @@ int (*get_fun(char specifier))(va_list)
 				{'x', print_low_hex},
 				{'X', print_up_hex},
 				{'S', print_S},
+				{'p', print_P},
 				{'o', print_octal}};
 	int i;
 
 	i = 0;
-	while (i < 12)
+	while (i < 13)
 	{
 		if (specifier == func[i].c)
 			return (func[i].f);
