@@ -10,6 +10,8 @@ int print_u_number(unsigned int n)
 {
 	int copy_n = n, count = 0;
 
+	if (n == 0)
+		return (_putchar('0'));
 	while (copy_n != 0)
 	{
 		copy_n = copy_n / 10;
