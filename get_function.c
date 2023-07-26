@@ -15,11 +15,15 @@ int (*get_fun(char specifier))(va_list)
 				{'i', print_n},
 				{'b', print_binary},
 				{'r', print_r},
-				{'R', rot13}};
+				{'R', rot13},
+				{'u', print_u},
+				{'x', print_low_hex},
+				{'X', print_up_hex},
+				{'o', print_octal}};
 	int i;
 
 	i = 0;
-	while (i < 7)
+	while (i < 10)
 	{
 		if (specifier == func[i].c)
 			return (func[i].f);
