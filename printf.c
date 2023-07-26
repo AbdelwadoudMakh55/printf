@@ -29,7 +29,10 @@ int _printf(const char *format, ...)
 				if (function != NULL)
 					len += function(list);
 				else
+				{
+					len += _putchar('%');
 					len += _putchar(format[i]);
+				}
 			}
 		}
 		else
