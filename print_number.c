@@ -10,6 +10,10 @@ int print_number(int n)
 {
 	int copy_n = n, count = 0;
 
+	if (n == 0)
+	{
+		return (_putchar('0'));
+	}
 	if (n == -2147483648)
 	{
 		_putchar('-');
