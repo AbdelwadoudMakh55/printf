@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
 #include <stdarg.h>
 /**
  * print_u_number - Print unsignd integer to stdout.
@@ -8,7 +7,7 @@
  */
 int print_u_number(unsigned int n)
 {
-	int copy_n = n, count = 0;
+	unsigned int copy_n = n, count = 0;
 
 	if (n == 0)
 		return (_putchar('0'));
