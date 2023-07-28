@@ -3,7 +3,7 @@
 #include <stdarg.h>
 #include <limits.h>
 /**
- * print_number - Print integer to stdout.
+ * print_l_number - Print integer to stdout.
  * @n : Number.
  * Return: Number of printed digits.
  */
