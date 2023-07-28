@@ -12,8 +12,8 @@ int print_up_hex(va_list list)
 	int i, j;
 	char buffer[200];
 	char A_to_F[6] = {'A', 'B', 'C', 'D', 'E', 'F'};
-	unsigned int hex10_to15[6] = {10, 11, 12, 13, 14, 15};
-	unsigned int n = va_arg(list, unsigned int);
+	unsigned long int hex10_to15[6] = {10, 11, 12, 13, 14, 15};
+	unsigned long int n = va_arg(list, unsigned long int);
 
 	for (i = 0; n / 16 != 0; i++)
 	{

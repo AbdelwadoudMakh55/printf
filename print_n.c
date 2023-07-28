@@ -8,7 +8,7 @@
  */
 int print_n(va_list list)
 {
-	int n = va_arg(list, int);
+	long int n = va_arg(list, long int);
 
-	return (print_number(n));
+	return (print_l_number(n));
 }

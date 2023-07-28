@@ -34,6 +34,9 @@ int print_low_hex(va_list list);
 int print_up_hex(va_list list);
 int print_S(va_list list);
 int print_P(va_list list);
+int print_l_number(long int n);
+int print_h_number(short int n);
+int print_lu_number(unsigned long int n);
 int _printf(const char *format, ...);
 int (*get_fun(char specifier))(va_list);
 

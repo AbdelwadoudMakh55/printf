@@ -25,6 +25,8 @@ int _printf(const char *format, ...)
 				len += _putchar('%');
 			if (format[i] != '\0' && format[i] != '%')
 			{
+				if (format[i] == 'l' || format[i] == 'h')
+					i++;
 				function = get_fun(format[i]);
 				if (function != NULL)
 					len += function(list);

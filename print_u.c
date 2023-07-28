@@ -7,7 +7,7 @@
  */
 int print_u(va_list list)
 {
-	unsigned int n = va_arg(list, unsigned int);
+	unsigned long int n = va_arg(list, unsigned long int);
 
-	return (print_u_number(n));
+	return (print_lu_number(n));
 }

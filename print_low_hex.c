@@ -12,8 +12,8 @@ int print_low_hex(va_list list)
 	int i, j;
 	char buffer[200];
 	char a_to_f[6] = {'a', 'b', 'c', 'd', 'e', 'f'};
-	unsigned int hex10_to15[6] = {10, 11, 12, 13, 14, 15};
-	unsigned int n = va_arg(list, unsigned int);
+	unsigned long int hex10_to15[6] = {10, 11, 12, 13, 14, 15};
+	unsigned long int n = va_arg(list, unsigned long int);
 
 	for (i = 0; n / 16 != 0; i++)
 	{

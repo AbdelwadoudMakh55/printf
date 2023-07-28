@@ -10,7 +10,7 @@ int print_octal(va_list list)
 {
 	int i = 0;
 	char buffer[200];
-	unsigned int n = va_arg(list, int);
+	unsigned long int n = va_arg(list, unsigned long int);
 
 	for (i = 0; n / 8 != 0; i++)
 	{
